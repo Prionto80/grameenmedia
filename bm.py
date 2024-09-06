@@ -12,9 +12,11 @@ def index():
 @app.route('/docx', methods=["GET", "POST"])
 def document():
 	if request.method == 'POST':
+		bill_no=request.form['bill_no']
+		showroom=request.form['showroom']
 		invoice = CreateBill(
-			billNo=request.form['bill_no'],
-			brand = request.form['brand'],
+			billNo=bill_no,
+			brand = showroom,
 			showroom = request.form['showroom'],
 			address = request.form['address'],
 			mobile = request.form['mobile'],
