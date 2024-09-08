@@ -49,7 +49,6 @@ def mobile():
 		)
 	invoice_file = invoice.save_to_bytes()
 	return send_file(invoice_file, as_attachment=True, download_name=f"{bill_no} {showroom}.docx", mimetype='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
-	return redirect(url_for("index"))
 
 
 
